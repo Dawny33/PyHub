@@ -98,11 +98,22 @@ def getEngagements():
     url = HS_API_URL + xurl + APIKEY
 
     response = urllib2.urlopen(url).read()
-    list_of_engagements = json_loads(response)
+    list_of_engagements = json.loads(response)
 
     return list_of_engagements
 
 
+def getListLayouts():
+    xurl = '/content/api/v2/layouts'
+
+    url = HS_API_URL + xurl + APIKEY
+
+    response = urllib2.urlopen(url).read()
+    list_of_layouts = json.loads(response)
+
+    return list_of_layouts
+
+
 if __name__ == '__main__':
-    getEngagements()
+    print getListLayouts()
     # lambda *args: None
