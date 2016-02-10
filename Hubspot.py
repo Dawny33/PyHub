@@ -145,5 +145,4 @@ def getWorkflows():
 
 
 if __name__ == '__main__':
-    print getWorkflows()
-    # lambda *args: None
+    lambda *args: None
