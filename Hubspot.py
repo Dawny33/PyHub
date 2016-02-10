@@ -113,7 +113,28 @@ def getListLayouts():
 
     return list_of_layouts
 
+def getRecentlyUpdatedContacts():
+    xurl = '/contacts/v1/lists/recently_updated/contacts/recent'
+
+    url = HS_API_URL + xurl + APIKEY
+
+    response = urllib2.urlopen(url).read()
+    recently_updated = json.loads(response)
+
+    return recently_updated
+
+
+def getWorkflows():
+    xurl = '/automation/v3/workflows'
+
+    url = HS_API_URL + url + APIKEY
+
+    response = urllib2.urlopen(url).read()
+    list_of_workflows = json.loads(response)
+
+    return list_of_workflows
+
+
 
 if __name__ == '__main__':
-    print getListLayouts()
-    # lambda *args: None
+    lambda *args: None
