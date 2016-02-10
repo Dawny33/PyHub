@@ -121,20 +121,29 @@ def getRecentlyUpdatedContacts():
     response = urllib2.urlopen(url).read()
     recently_updated = json.loads(response)
 
-    return recently_updated
+    array_of_contacts = []
+
+    '''Gets a list of the properties recently updated contacts'''
+    for i in recently_updated['contacts']:
+        print i['properties']
 
 
 def getWorkflows():
     xurl = '/automation/v3/workflows'
 
-    url = HS_API_URL + url + APIKEY
+    url = HS_API_URL + xurl + APIKEY
 
     response = urllib2.urlopen(url).read()
     list_of_workflows = json.loads(response)
 
-    return list_of_workflows
+    '''Gets a list of the name of the Workflows'''
+    for i in list_of_workflows['workflows']:
+        print i['name']
+
+    #return list_of_workflows
 
 
 
 if __name__ == '__main__':
-    lambda *args: None
+    print getWorkflows()
+    # lambda *args: None
