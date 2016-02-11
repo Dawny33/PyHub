@@ -113,6 +113,7 @@ def getListLayouts():
 
     return list_of_layouts
 
+
 def getRecentlyUpdatedContacts():
     xurl = '/contacts/v1/lists/recently_updated/contacts/recent'
 
@@ -140,9 +141,7 @@ def getWorkflows():
     for i in list_of_workflows['workflows']:
         print i['name']
 
-    #return list_of_workflows
-
-
+    # return list_of_workflows
 
 if __name__ == '__main__':
     lambda *args: None
